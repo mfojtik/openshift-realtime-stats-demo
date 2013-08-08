@@ -80,8 +80,8 @@
   socket.onmessage = function(event) {
     var stats = $.parseJSON(event.data)
     // push a new data point onto the back
-    var i = parseInt(stats[6][2]);
-    data.push(i)
+    var backend = stats.pop();
+    data.push(parseInt(backend[2]));
 
     // redraw the line, and slide it to the left
     path
